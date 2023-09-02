@@ -3,7 +3,7 @@ Overlay containing ebuilds of CachyOS kernels and some other things
 
 ## Adding the overlay
 ``` sh
-eselect repository add CachyOS-kernels git https://github.com/Szowisz/CachyOS-kernels
+eselect repository add CachyOS-kernels git https://github.com/corporal9736/CachyOS-kernels
 ```
 
 ## Sync overlay
