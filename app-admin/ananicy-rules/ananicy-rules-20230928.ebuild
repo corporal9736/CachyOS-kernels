@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/CachyOS/ananicy-rules"
 SRC_URI="https://github.com/CachyOS/ananicy-rules/archive/${COMMIT}.tar.gz -> ${P}.tar.gz"
 S="${WORKDIR}/${PN}-${COMMIT}"
 
-LICENSE=""
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
