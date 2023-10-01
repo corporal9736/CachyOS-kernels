@@ -37,3 +37,8 @@ src_configure() {
 	)
 	cmake_src_configure
 }
+
+src_install() {
+	doinitd "${FILESDIR}/${PN}.initd"
+	cmake_src_install
+}
