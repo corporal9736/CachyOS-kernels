@@ -5,8 +5,19 @@
 		<email>szowisz.gentoo@gmail.com</email>
 		<name>Jakub Wroński</name>
 	</maintainer>
+	<maintainer type="person">
+		<email>corporal9736@gmail.com</email>
+	</maintainer>
 	<upstream>
 		<bugs-to>https://gitlab.com/ananicy-cpp/ananicy-cpp/-/issues</bugs-to>
 		<remote-id type="gitlab">ananicy-cpp/ananicy-cpp</remote-id>
 	</upstream>
+	<use>
+		<flag name="systemd">Enable systemd support</flag>
+		<flag name="bpf">Enable bpf support by dev-libs/libbpf and dev-util/bpftool</flag>
+		<flag name="benchmark">Run some benchmark program during build. Only available when test is enabled</flag>
+		<flag name="system-json">Use system nlohmann_json library instead of bundled</flag>
+		<flag name="system-libfmt">Use system libfmt library instead of bundled</flag>
+		<flag name="system-spdlog">Use system spdlog library instead of bundled</flag>
+	</use>
 </pkgmetadata>
