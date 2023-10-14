@@ -208,7 +208,7 @@ src_prepare() {
 
 	# Miscellaneous
 	scripts/config -d DRM_SIMPLEDRM
-	scripts/config --set-str CONFIG_LSM “lockdown,yama,integrity,selinux,apparmor,bpf,landlock”
+	scripts/config --set-str CONFIG_LSM "lockdown,yama,integrity,selinux,apparmor,bpf,landlock"
 }
 
 pkg_postinst() {
