@@ -5,8 +5,40 @@
     <email>szowisz.gentoo@gmail.com</email>
     <name>Jakub Wroński</name>
   </maintainer>
+  <maintainer type="person">
+    <email>corporal9736@gmail.com</email>
+  </maintainer>
   <upstream>
     <remote-id type="github">CachyOS/linux-cachyos</remote-id>
     <bugs-to>https://github.com/CachyOS/linux-cachyos/issues</bugs-to>
   </upstream>
+  <use>
+    <flag name="bore-eevdf">
+      Use EEVDF combined with BORE scheduler. The default set of CachyOS
+    </flag>
+    <flag name="eevdf">
+      Use EEVDF(Earliest Eligible Virtual Deadline)
+    </flag>
+    <flag name="pds">
+      Use Priority and Deadline based Skiplist multiple queue by Alfred Chen
+    </flag>
+    <flag name="bmq">
+      Use BitMap Queue by Alfred Chen
+    </flag>
+    <flag name="tt">
+      Use Task Type Scheduler by Hamad Marri
+    </flag>
+    <flag name="bore">
+      Use BORE(Burst-Oriented Response Enhancer) by firelzrd
+    </flag>
+    <flag name="cfs">
+      Use Standard Scheduler Completely Fair Scheduler
+    </flag>
+    <flag name="cfs-rt">
+      Use CFS with realtime patches
+    </flag>
+    <flag name="bore-hardened">
+      Use BORE with hardened patches
+    </flag>
+  </use>
 </pkgmetadata>
