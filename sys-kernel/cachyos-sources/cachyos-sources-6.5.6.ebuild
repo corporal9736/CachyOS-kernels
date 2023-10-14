@@ -88,6 +88,10 @@ src_prepare() {
 	# The following config options are from https://github.com/CachyOS/linux-cachyos
 	# You can change any of them using `make menuconfig`. These are defaults.
 	# No use flag will be added to control these options. Just change by yourself.
+
+	# Enable CachyOS tweaks
+	scripts/config -e CACHY
+
 	# Remove CachyOS's localversion
 	find . -name "localversion*" -delete
 	scripts/config -u LOCALVERSION
@@ -196,6 +200,15 @@ src_prepare() {
 
 	# Enable USER_NS_UNPRIVILEGED
 	scripts/config -e USER_NS
+
+	# These are gentoo specific configs
+	scripts/config --set-str DEFAULT_HOSTNAME "gentoo"
+	scripts/config -e GENTOO_LINUX
+	scripts/config -e GENTOO_LINUX_INIT_SYSTEMD
+
+	# Miscellaneous
+	scripts/config -d DRM_SIMPLEDRM
+	scripts/config --set-str CONFIG_LSM “lockdown,yama,integrity,selinux,apparmor,bpf,landlock”
 }
 
 pkg_postinst() {
