@@ -40,5 +40,8 @@
     <flag name="bore-hardened">
       Use BORE with hardened patches
     </flag>
+    <flag name="bcachefs">
+      Enable bcachefs
+    </flag>
   </use>
 </pkgmetadata>

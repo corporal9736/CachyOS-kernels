@@ -21,7 +21,7 @@ SRC_URI="${KERNEL_URI} ${GENPATCHES_URI}
 
 LICENSE="GPL-3"
 KEYWORDS="~amd64"
-IUSE="+bore-eevdf eevdf pds bmq tt bore cfs cfs-rt bore-hardened"
+IUSE="+bore-eevdf eevdf pds bmq tt bore cfs cfs-rt bore-hardened +bcachefs"
 REQUIRED_USE="^^ ( bore-eevdf eevdf pds bmq tt bore cfs cfs-rt bore-hardened )"
 
 PATCH_DIR="${WORKDIR}/patches"
@@ -79,6 +79,14 @@ src_prepare() {
 	if use cfs-rt; then
 		eapply "${PATCH_DIR}/sched/0001-rt.patch"
 		cp "${FILESDIR}/${KV_MAJOR}.${KV_MINOR}/config-cachyos-rt" .config
+	fi
+
+	if use bcachefs; then
+		eapply "${PATCH_DIR}/misc/0001-bcachefs.patch"
+		# here change BCACHEFS_FS from enable to module
+		scripts/config -m BCACHEFS_FS \
+			-e BCACHEFS_QUOTA \
+			-e BCACHEFS_POSIX_ACL
 	fi
 
 	eapply_user
