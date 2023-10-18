@@ -43,5 +43,8 @@
     <flag name="bcachefs">
       Enable bcachefs
     </flag>
+    <flag name="lrng">
+      Enable Linux Random Number Generator
+    </flag>
   </use>
 </pkgmetadata>

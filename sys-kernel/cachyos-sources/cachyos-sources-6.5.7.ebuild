@@ -21,7 +21,7 @@ SRC_URI="${KERNEL_URI} ${GENPATCHES_URI}
 
 LICENSE="GPL-3"
 KEYWORDS="~amd64"
-IUSE="+bore-eevdf eevdf pds bmq tt bore cfs cfs-rt bore-hardened +bcachefs"
+IUSE="+bore-eevdf eevdf pds bmq tt bore cfs cfs-rt bore-hardened +bcachefs +lrng"
 REQUIRED_USE="^^ ( bore-eevdf eevdf pds bmq tt bore cfs cfs-rt bore-hardened )"
 
 PATCH_DIR="${WORKDIR}/patches"
@@ -87,6 +87,79 @@ src_prepare() {
 		scripts/config -m BCACHEFS_FS \
 			-e BCACHEFS_QUOTA \
 			-e BCACHEFS_POSIX_ACL
+	fi
+
+	if use lrng; then
+		eapply "${PATCH_DIR}/misc/0001-lrng.patch"
+		scripts/config -d RANDOM_DEFAULT_IMPL \
+			-e LRNG \
+			-e LRNG_SHA256 \
+			-e LRNG_COMMON_DEV_IF \
+			-e LRNG_DRNG_ATOMIC \
+			-e LRNG_SYSCTL \
+			-e LRNG_RANDOM_IF \
+			-e LRNG_AIS2031_NTG1_SEEDING_STRATEGY \
+			-m LRNG_KCAPI_IF \
+			-m LRNG_HWRAND_IF \
+			-e LRNG_DEV_IF \
+			-e LRNG_RUNTIME_ES_CONFIG \
+			-e LRNG_IRQ_DFLT_TIMER_ES \
+			-d LRNG_SCHED_DFLT_TIMER_ES \
+			-e LRNG_TIMER_COMMON \
+			-d LRNG_COLLECTION_SIZE_256 \
+			-d LRNG_COLLECTION_SIZE_512 \
+			-e LRNG_COLLECTION_SIZE_1024 \
+			-d LRNG_COLLECTION_SIZE_2048 \
+			-d LRNG_COLLECTION_SIZE_4096 \
+			-d LRNG_COLLECTION_SIZE_8192 \
+			--set-val LRNG_COLLECTION_SIZE 1024 \
+			-e LRNG_HEALTH_TESTS \
+			--set-val LRNG_RCT_CUTOFF 31 \
+			--set-val LRNG_APT_CUTOFF 325 \
+			-e LRNG_IRQ \
+			-e LRNG_CONTINUOUS_COMPRESSION_ENABLED \
+			-d LRNG_CONTINUOUS_COMPRESSION_DISABLED \
+			-e LRNG_ENABLE_CONTINUOUS_COMPRESSION \
+			-e LRNG_SWITCHABLE_CONTINUOUS_COMPRESSION \
+			--set-val LRNG_IRQ_ENTROPY_RATE 256 \
+			-e LRNG_JENT \
+			--set-val LRNG_JENT_ENTROPY_RATE 16 \
+			-e LRNG_CPU \
+			--set-val LRNG_CPU_FULL_ENT_MULTIPLIER 1 \
+			--set-val LRNG_CPU_ENTROPY_RATE 8 \
+			-e LRNG_SCHED \
+			--set-val LRNG_SCHED_ENTROPY_RATE 4294967295 \
+			-e LRNG_DRNG_CHACHA20 \
+			-m LRNG_DRBG \
+			-m LRNG_DRNG_KCAPI \
+			-e LRNG_SWITCH \
+			-e LRNG_SWITCH_HASH \
+			-m LRNG_HASH_KCAPI \
+			-e LRNG_SWITCH_DRNG \
+			-m LRNG_SWITCH_DRBG \
+			-m LRNG_SWITCH_DRNG_KCAPI \
+			-e LRNG_DFLT_DRNG_CHACHA20 \
+			-d LRNG_DFLT_DRNG_DRBG \
+			-d LRNG_DFLT_DRNG_KCAPI \
+			-e LRNG_TESTING_MENU \
+			-d LRNG_RAW_HIRES_ENTROPY \
+			-d LRNG_RAW_JIFFIES_ENTROPY \
+			-d LRNG_RAW_IRQ_ENTROPY \
+			-d LRNG_RAW_RETIP_ENTROPY \
+			-d LRNG_RAW_REGS_ENTROPY \
+			-d LRNG_RAW_ARRAY \
+			-d LRNG_IRQ_PERF \
+			-d LRNG_RAW_SCHED_HIRES_ENTROPY \
+			-d LRNG_RAW_SCHED_PID_ENTROPY \
+			-d LRNG_RAW_SCHED_START_TIME_ENTROPY \
+			-d LRNG_RAW_SCHED_NVCSW_ENTROPY \
+			-d LRNG_SCHED_PERF \
+			-d LRNG_ACVT_HASH \
+			-d LRNG_RUNTIME_MAX_WO_RESEED_CONFIG \
+			-d LRNG_TEST_CPU_ES_COMPRESSION \
+			-e LRNG_SELFTEST \
+			-d LRNG_SELFTEST_PANIC \
+			-d LRNG_RUNTIME_FORCE_SEEDING_DISABLE
 	fi
 
 	eapply_user
