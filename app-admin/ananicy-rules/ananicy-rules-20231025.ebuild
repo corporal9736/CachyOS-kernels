@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-COMMIT="180223183bfef9d2c25f9c784b274d9d0faa4f5a"
+COMMIT="8bfce840ae0db6f99c706c919ac61f3feff79db7"
 
 DESCRIPTION="List of rules used to assign specific nice values to specific processes
 			maintained by cachyos teams"
