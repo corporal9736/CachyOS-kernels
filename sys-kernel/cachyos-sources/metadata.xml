@@ -34,11 +34,14 @@
     <flag name="cfs">
       Use Standard Scheduler Completely Fair Scheduler
     </flag>
-    <flag name="cfs-rt">
-      Use CFS with realtime patches
+    <flag name="eevdf-rt">
+      Use EEVDF with realtime patches
     </flag>
     <flag name="bore-hardened">
       Use BORE with hardened patches
+    </flag>
+    <flag name="sched-ext">
+      USE sched-ext with BORE
     </flag>
     <flag name="bcachefs">
       Enable bcachefs
