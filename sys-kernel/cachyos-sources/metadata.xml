@@ -19,26 +19,14 @@
     <flag name="eevdf">
       Use EEVDF(Earliest Eligible Virtual Deadline)
     </flag>
-    <flag name="pds">
-      Use Priority and Deadline based Skiplist multiple queue by Alfred Chen
-    </flag>
-    <flag name="bmq">
-      Use BitMap Queue by Alfred Chen
-    </flag>
-    <flag name="tt">
-      Use Task Type Scheduler by Hamad Marri
-    </flag>
     <flag name="bore">
       Use BORE(Burst-Oriented Response Enhancer) by firelzrd
     </flag>
-    <flag name="cfs">
-      Use Standard Scheduler Completely Fair Scheduler
-    </flag>
-    <flag name="eevdf-rt">
+    <flag name="rt-eevdf">
       Use EEVDF with realtime patches
     </flag>
-    <flag name="bore-hardened">
-      Use BORE with hardened patches
+    <flag name="rt-bore">
+      Use BORE with realtime patches
     </flag>
     <flag name="sched-ext">
       USE sched-ext with BORE
