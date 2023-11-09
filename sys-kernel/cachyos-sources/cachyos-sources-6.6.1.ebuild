@@ -8,13 +8,13 @@ K_EXP_GENPATCHES_NOUSE="1"
 K_WANT_GENPATCHES="base extras"
 # for this version please check the tag of
 # https://anongit.gentoo.org/git/proj/linux-patches.git
-K_GENPATCHES_VER="1"
+K_GENPATCHES_VER="2"
 
 inherit kernel-2 optfeature
 detect_version
-# COMMIT of CachyOS/linux-cachyos: ae01ef10a17bf8cf57ce2ceb30248e47d2edc1b8
+# COMMIT of CachyOS/linux-cachyos: 959b6e24c255f33f0510af17154847bfce5478a5
 # This is the commit hash for Cachyos/kernel-patches
-EGIT_COMMIT="ea4aa71f452203bc7be29ca8ccd2b1ca16ecee14"
+EGIT_COMMIT="2420eba082f28bd2a82b8d499e436e7b01f9abc1"
 
 DESCRIPTION="CachyOS provides enhanced kernels that offer improved performance and other benefits."
 HOMEPAGE="https://github.com/CachyOS/linux-cachyos"
@@ -172,10 +172,12 @@ src_prepare() {
 	(use bore-eevdf || use eevdf) && scripts/config -e SCHED_BORE
 	use rt-eevdf && scripts/config -e PREEMPT_COUNT -e PREEMPTION \
 		-d PREEMPT_VOLUNTARY -d PREEMPT -d PREEMPT_NONE -e PREEMPT_RT \
-		-d PREEMPT_DYNAMIC -d PREEMPT_BUILD
+		-e PREEMPT_AUTO -d PREEMPT_DYNAMIC -e HAVE_PREEMPT_AUTO \
+		-d PREEMPT_BUILD
 	use rt-bore && scripts/config -e SCHED_BORE -e PREEMPT_COUNT \
 		-e PREEMPTION -d PREEMPT_VOLUNTARY -d PREEMPT -d PREEMPT_NONE \
-		-e PREEMPT_RT -d PREEMPT_DYNAMIC -d PREEMPT_BUILD
+		-e PREEMPT_RT -e PREEMPT_AUTO -d PREEMPT_DYNAMIC \
+		-e HAVE_PREEMPT_AUTO -d PREEMPT_BUILD
 	use sched-ext && scripts/config -e SCHED_BORE -e SCHED_CLASS_EXT
 	# no special set for eevdf
 
