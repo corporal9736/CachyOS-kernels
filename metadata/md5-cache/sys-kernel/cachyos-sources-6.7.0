@@ -3,13 +3,13 @@ DESCRIPTION=CachyOS provides enhanced kernels that offer improved performance an
 EAPI=8
 HOMEPAGE=https://github.com/CachyOS/linux-cachyos
 INHERIT=kernel-2 optfeature
-IUSE=+bore-eevdf eevdf bore rt-eevdf rt-bore sched-ext +bcachefs +lrng symlink build
+IUSE=+bore-eevdf eevdf bore rt-eevdf rt-bore sched-ext symlink build
 KEYWORDS=~amd64
 LICENSE=GPL-3
 RDEPEND=!build? ( app-alternatives/cpio dev-lang/perl app-alternatives/bc app-alternatives/yacc app-alternatives/lex sys-devel/make >=sys-libs/ncurses-5.2 virtual/libelf virtual/pkgconfig )
 REQUIRED_USE=^^ ( bore-eevdf eevdf bore rt-eevdf rt-bore sched-ext )
 RESTRICT=binchecks strip
-SLOT=6.6.4
-SRC_URI=https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.6.tar.xz https://dev.gentoo.org/~alicef/dist/genpatches/genpatches-6.6-6.base.tar.xz https://dev.gentoo.org/~mpagano/dist/genpatches/genpatches-6.6-6.base.tar.xz https://dev.gentoo.org/~alicef/dist/genpatches/genpatches-6.6-6.extras.tar.xz https://dev.gentoo.org/~mpagano/dist/genpatches/genpatches-6.6-6.extras.tar.xz https://github.com/CachyOS/kernel-patches/archive/c54fb1a796aa565350aefbf5c6384e18fd7edfb0.tar.gz -> cachyos-sources-6.6.4.tar.gz
+SLOT=6.7.0
+SRC_URI=https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.7.tar.xz https://dev.gentoo.org/~alicef/dist/genpatches/genpatches-6.7-1.base.tar.xz https://dev.gentoo.org/~mpagano/dist/genpatches/genpatches-6.7-1.base.tar.xz https://dev.gentoo.org/~alicef/dist/genpatches/genpatches-6.7-1.extras.tar.xz https://dev.gentoo.org/~mpagano/dist/genpatches/genpatches-6.7-1.extras.tar.xz https://github.com/CachyOS/kernel-patches/archive/8b0b1cea70459b42245fb428d020d748f2a05dd0.tar.gz -> cachyos-sources-6.7.0.tar.gz
 _eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	crossdev	f04338ff78f213a4a55c5c37b3c6563e	estack	c61c368a76fdf3a82fdf8dbaebea3804	multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	kernel-2	e0121c8eaf287badf479a22ce41c88fd	optfeature	222cb475c5a4f7ae7cfb0bf510a6fe54
-_md5_=a7f8bad8a3264abb3866fc571dd35b02
+_md5_=7ab415b9d23e9c7aa4a777eb426dcf56
