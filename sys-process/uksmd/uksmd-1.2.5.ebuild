@@ -7,7 +7,7 @@ inherit linux-info meson systemd
 
 DESCRIPTION="Userspace KSM helper daemon"
 HOMEPAGE="https://github.com/CachyOS/uksmd"
-SRC_URI="https://github.com/CachyOS/uksmd/archive/refs/tags/v${PV}.tar.gz"
+SRC_URI="https://github.com/CachyOS/uksmd/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

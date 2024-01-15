@@ -5,4 +5,7 @@
     <email>szowisz.gentoo@gmail.com</email>
     <name>Jakub Wroński</name>
   </maintainer>
+  <upstream>
+    <remote-id type="github">CachyOS/uksmd</remote-id>
+  </upstream>
 </pkgmetadata>
