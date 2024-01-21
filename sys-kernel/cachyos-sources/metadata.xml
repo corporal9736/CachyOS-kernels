@@ -13,8 +13,8 @@
     <bugs-to>https://github.com/CachyOS/linux-cachyos/issues</bugs-to>
   </upstream>
   <use>
-    <flag name="bore-eevdf">
-      Use EEVDF combined with BORE scheduler. The default set of CachyOS
+    <flag name="bore-sched-ext">
+      Use EEVDF combined with BPF extensible scheduler. The default set of CachyOS
     </flag>
     <flag name="eevdf">
       Use EEVDF(Earliest Eligible Virtual Deadline)
@@ -30,9 +30,6 @@
     </flag>
     <flag name="sched-ext">
       USE sched-ext with BORE
-    </flag>
-    <flag name="bcachefs">
-      Enable bcachefs
     </flag>
     <flag name="lrng">
       Enable Linux Random Number Generator
