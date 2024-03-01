@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DEPEND=app-admin/ananicy-cpp
+DESCRIPTION=List of rules used to assign specific nice values to specific processes maintained by cachyos teams
+EAPI=8
+HOMEPAGE=https://github.com/CachyOS/ananicy-rules
+KEYWORDS=~amd64
+LICENSE=GPL-3
+RDEPEND=app-admin/ananicy-cpp
+SLOT=0
+SRC_URI=https://github.com/CachyOS/ananicy-rules/archive/ead94ba4a75b56dc2783ac34b9623c77a4c9bc0b.tar.gz -> ananicy-rules-20240229.tar.gz
+_md5_=8933aedb63da95eb50971caf97c47994
