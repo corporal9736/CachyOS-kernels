@@ -31,8 +31,7 @@
     <flag name="sched-ext">
       USE sched-ext with BORE
     </flag>
-    <flag name="lrng">
-      Enable Linux Random Number Generator
-    </flag>
+	<flag name="echo">
+	  USE ECHO(Enhanced CPU Handling Orchestrator) by Hamad Marri
   </use>
 </pkgmetadata>
