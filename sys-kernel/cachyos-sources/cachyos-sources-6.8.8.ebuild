@@ -7,7 +7,7 @@ EXTRAVERSION="-cachyos"
 K_EXP_GENPATCHES_NOUSE="1"
 K_WANT_GENPATCHES="base extras"
 # for this version please check the tag of
-# https://anongit.gentoo.org/git/proj/linux-patches.git
+# https://gitweb.gentoo.org/proj/linux-patches.git
 K_GENPATCHES_VER="11"
 
 inherit kernel-2 optfeature
