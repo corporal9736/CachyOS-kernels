@@ -31,7 +31,7 @@
     <flag name="sched-ext">
       USE sched-ext with BORE
     </flag>
-	<flag name="echo">
-	  USE ECHO(Enhanced CPU Handling Orchestrator) by Hamad Marri
+	<flag name="bmq">
+	  USE BMQ(BitMap Queue)
   </use>
 </pkgmetadata>
