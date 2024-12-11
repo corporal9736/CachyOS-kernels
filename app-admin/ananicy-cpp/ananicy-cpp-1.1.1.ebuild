@@ -31,7 +31,7 @@ RDEPEND="
 	systemd? ( sys-apps/systemd )
 	bpf? ( dev-libs/libbpf
 	dev-util/bpftool
-	sys-devel/clang[llvm_targets_BPF] )
+	llvm-core/clang[llvm_targets_BPF] )
 "
 DEPEND="
 	${RDEPEND}
