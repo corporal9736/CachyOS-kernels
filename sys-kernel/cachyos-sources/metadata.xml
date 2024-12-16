@@ -13,9 +13,6 @@
     <bugs-to>https://github.com/CachyOS/linux-cachyos/issues</bugs-to>
   </upstream>
   <use>
-    <flag name="bore-sched-ext">
-      Use EEVDF combined with BPF extensible scheduler. The default set of CachyOS
-    </flag>
     <flag name="eevdf">
       Use EEVDF(Earliest Eligible Virtual Deadline)
     </flag>
@@ -28,10 +25,8 @@
     <flag name="rt-bore">
       Use BORE with realtime patches
     </flag>
-    <flag name="sched-ext">
-      USE sched-ext with BORE
+	  <flag name="bmq">
+	    USE BMQ(BitMap Queue)
     </flag>
-	<flag name="bmq">
-	  USE BMQ(BitMap Queue)
   </use>
 </pkgmetadata>
