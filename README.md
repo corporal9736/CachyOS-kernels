@@ -1,4 +1,7 @@
+Due to the lack of my time. This project is no more maintained and archived.
+
 # CachyOS-kernels
+
 Overlay containing ebuilds of CachyOS kernels and some other things
 
 ## Adding the overlay
